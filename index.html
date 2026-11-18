@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فلوريدا ستور | FLORIDA - منة وفاطمة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --florida-pink: #ec4899;
+      --florida-pink-dark: #be185d;
+      --florida-rose: #fce7f3;
+      --navy-900: #1f2937;
+      --slate-50: #fdf2f8;
+      --slate-100: #fce7f3;
+      --slate-200: #fbcfe8;
+      --slate-500: #6b7280;
+      --slate-700: #374151;
+      --slate-900: #111827;
+      --white: #ffffff;
+      --danger: #ef4444;
+      --shadow-sm: 0 2px 8px rgba(236, 72, 153, 0.06);
+      --shadow-md: 0 10px 25px rgba(236, 72, 153, 0.12);
+      --shadow-lg: 0 20px 40px rgba(236, 72, 153, 0.18);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 0.9rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy-900);
+    }
+
+    .brand-badge {
+      background: var(--florida-pink);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 1.15rem;
+      padding: 4px 12px;
+      border-radius: 8px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--florida-pink-dark);
+      font-weight: 700;
+      margin-top: -2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--slate-700);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--florida-pink); }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .add-prod-btn {
+      background: var(--slate-100);
+      color: var(--florida-pink-dark);
+      border: 1px solid var(--slate-200);
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .add-prod-btn:hover {
+      background: var(--florida-pink);
+      color: var(--white);
+    }
+
+    .quote-btn-header {
+      background: var(--florida-pink);
+      color: var(--white);
+      border: none;
+      padding: 0.55rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .quote-btn-header:hover {
+      background: var(--florida-pink-dark);
+      transform: translateY(-1px);
+    }
+
+    .badge-count {
+      background: var(--white);
+      color: var(--florida-pink);
+      border-radius: 999px;
+      padding: 1px 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 100%);
+      color: var(--navy-900);
+      padding: 4.5rem 5% 5rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      color: var(--florida-pink-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h1 span { color: var(--florida-pink); }
+
+    .hero p {
+      color: var(--slate-700);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .btn-primary {
+      background: var(--florida-pink);
+      color: var(--white);
+      padding: 0.85rem 1.8rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+      background: var(--florida-pink-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    .hero-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-gallery img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--slate-200);
+    }
+
+    .store-card-preview h3 {
+      font-size: 1.4rem;
+      color: var(--florida-pink-dark);
+      margin-bottom: 4px;
+    }
+
+    section { padding: 4.5rem 5%; }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-header p {
+      color: var(--slate-500);
+      font-size: 1.02rem;
+    }
+
+    .catalog-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      padding: 1.2rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+      border: 1px solid var(--slate-200);
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .filter-btn {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-700);
+      padding: 0.5rem 1.1rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--florida-pink);
+      color: var(--white);
+      border-color: var(--florida-pink);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+      flex: 1;
+      max-width: 360px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus { border-color: var(--florida-pink); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--slate-200);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-img-box {
+      width: 100%;
+      height: 230px;
+      background: #fdf2f8;
+      overflow: hidden;
+      border-bottom: 1px solid var(--slate-200);
+      position: relative;
+    }
+
+    .card-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .card-img-box img {
+      transform: scale(1.06);
+    }
+
+    .cat-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--florida-pink-dark);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* زر حذف المنتج من المتجر */
+    .btn-delete-product {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--danger);
+      border: 1px solid #fecaca;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .btn-delete-product:hover {
+      background: var(--danger);
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .card-body {
+      padding: 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--slate-500);
+      margin-bottom: 1rem;
+    }
+
+    .product-price {
+      color: var(--florida-pink-dark);
+      font-weight: 900;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .btn-add-cart {
+      flex: 1;
+      background: var(--florida-pink);
+      color: var(--white);
+      border: none;
+      padding: 0.7rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-add-cart:hover { background: var(--florida-pink-dark); }
+
+    .btn-details {
+      background: var(--slate-50);
+      color: var(--navy-900);
+      border: 1px solid var(--slate-200);
+      padding: 0.7rem 0.9rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-details:hover { background: var(--slate-200); }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 41, 55, 0.6);
+      z-index: 2000;
+      display: none;
+      justify-content: flex-end;
+    }
+
+    .drawer-overlay.open { display: flex; }
+
+    .drawer {
+      width: 100%;
+      max-width: 440px;
+      background: var(--white);
+      height: 100%;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+      overflow-y: auto;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--slate-200);
+      margin-bottom: 1.2rem;
+    }
+
+    .close-btn {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .cart-items {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cart-item {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-item-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-item-info img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+      border-radius: 6px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .quote-form {
+      border-top: 1px solid var(--slate-200);
+      padding-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      font-size: 0.92rem;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 41, 55, 0.7);
+      z-index: 2500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--navy-900);
+      color: var(--white);
+      padding: 0.9rem 1.4rem;
+      border-radius: 12px;
+      border-right: 4px solid var(--florida-pink);
+      box-shadow: var(--shadow-md);
+      z-index: 3000;
+      transform: translateY(120%);
+      transition: transform 0.3s ease;
+      font-weight: 700;
+    }
+
+    .toast.show { transform: translateY(0); }
+
+    footer {
+      background: var(--navy-900);
+      color: #9ca3af;
+      text-align: center;
+      padding: 2.5rem 5%;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .reset-link {
+      color: #f472b6;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      nav a { display: none; }
+      .hero h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-badge">FLORIDA</div>
+      <div class="brand-text">
+        <strong>فلوريدا ستور</strong>
+        <span>إدارة: منه وفاطمة 🌸</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#catalog">المنتجات والتشكيلة</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="add-prod-btn" onclick="openAddModal()">+ إضافة منتج</button>
+      <button class="quote-btn-header" onclick="toggleDrawer(true)">
+        <span>سلة الطلبات</span>
+        <span class="badge-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <div class="hero-tag">✨ الجمال والأناقة في مكان واحد</div>
+      <h1>مرحباً بكم في <span>FLORIDA Store</span></h1>
+      <p>
+        وجهتكم الأولى لكل ما تبحثين عنه من سلاسل بنات رقيقة، مجات مميزة، ساعات عصرية، وأرقى موديلات العبايات. اخترنا كل قطعة بعناية لنرضي ذوقكم الراقي.
+      </p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn-primary">تسوقي المنتجات الآن</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-gallery">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80" alt="سلاسل بنات">
+        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" alt="مجات">
+        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=400&q=80" alt="ساعات بنات">
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="عبايات">
+      </div>
+      <div class="store-card-preview">
+        <h3>تشكيلة FLORIDA 2026</h3>
+        <p style="font-size:0.9rem; color:#6b7280;">بإدارة منه وفاطمة — شحن لجميع المحافظات</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section id="catalog">
+    <div class="section-header">
+      <h2>كتالوج منتجات فلوريدا</h2>
+      <p>اختاري القسم المناسب أو ابحثي عن المنتج الذي ترغبين في اقتنائه</p>
+    </div>
+
+    <div class="catalog-controls">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">جميع المنتجات</button>
+        <button class="filter-btn" data-filter="necklaces">السلاسل والإكسسوارات</button>
+        <button class="filter-btn" data-filter="mugs">المجات والهدايا</button>
+        <button class="filter-btn" data-filter="watches">الساعات البناتي</button>
+        <button class="filter-btn" data-filter="abayas">العبايات</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="ابحثي عن اسم المنتج..." />
+      </div>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p style="color:#fff; font-weight:700; margin-bottom:6px;">FLORIDA Store — جميع الحقوق محفوظة لـ منه وفاطمة 🌸</p>
+    <p style="font-size:0.88rem;">تواصل معنا عبر واتساب لطلب الأوردرات والاستفسارات.</p>
+    <button class="reset-link" onclick="resetDefaultProducts()">استعادة المنتجات الافتراضية</button>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="if(event.target===this) toggleDrawer(false)">
+    <div class="drawer">
+      <div class="drawer-header">
+        <h3>سلة الطلبات الخاصة بك</h3>
+        <button class="close-btn" onclick="toggleDrawer(false)">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItemsContainer"></div>
+
+      <form class="quote-form" id="quoteForm" onsubmit="submitOrder(event)">
+        <strong style="font-size:0.95rem;">بيانات العميل لتأكيد الأوردر</strong>
+        <input type="text" id="clientName" placeholder="الاسم بالكامل *" required />
+        <input type="tel" id="clientPhone" placeholder="رقم الهاتف / واتساب *" required />
+        <textarea id="clientAddress" rows="2" placeholder="العنوان بالتفصيل (المحافظة، المنطقة، الشارع...) *" required></textarea>
+        <button type="submit" class="btn-primary" style="justify-content:center;">إرسال الطلب عبر واتساب 🛍️</button>
+        <button type="button" class="btn-details" style="width:100%;" onclick="copyOrderText()">نسخ تفاصيل الأوردر</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Product Specs Modal -->
+  <div class="modal-overlay" id="specsModal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-box" id="modalContent"></div>
+  </div>
+
+  <!-- Add New Product Modal -->
+  <div class="modal-overlay" id="addModal" onclick="if(event.target===this) closeAddModal()">
+    <div class="modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h3 style="color:#be185d;">إضافة منتج جديد لـ FLORIDA 🌸</h3>
+        <button class="close-btn" onclick="closeAddModal()">×</button>
+      </div>
+      <form class="quote-form" style="border:none; padding:0;" onsubmit="handleNewProduct(event)">
+        <input type="text" id="newProdName" placeholder="اسم المنتج (مثال: سلسلة فراشة دهبي) *" required />
+        <select id="newProdCat">
+          <option value="necklaces">السلاسل والإكسسوارات</option>
+          <option value="mugs">المجات والهدايا</option>
+          <option value="watches">الساعات البناتي</option>
+          <option value="abayas">العبايات</option>
+        </select>
+        <input type="number" id="newProdPrice" placeholder="السعر بالجنيه *" required />
+        <label style="font-size:0.85rem; font-weight:700; color:#374151;">اختاري صورة المنتج من جهازك:</label>
+        <input type="file" id="newProdImgFile" accept="image/*" required />
+        <textarea id="newProdDesc" rows="2" placeholder="وصف قصير للمنتج..." required></textarea>
+        <button type="submit" class="btn-primary" style="justify-content:center;">نشر المنتج في المتجر ✨</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">تمت العملية بنجاح!</div>
+
+  <script>
+    const categoryNames = {
+      necklaces: "سلاسل وإكسسوارات",
+      mugs: "مجات وهدايا",
+      watches: "ساعات بناتي",
+      abayas: "عبايات"
+    };
+
+    const defaultProducts = [
+      {
+        id: "FL-01",
+        name: "سلسلة ذهبية رقيقة بدلاية عصرية",
+        category: "necklaces",
+        price: 150,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+        desc: "سلسلة بنات راقية مقاومة للصدأ بتصميم يضيف لمسة نعومة لإطلالتك اليومية.",
+        details: "مصنوعة من خامات عالية الجودة، ثابتة اللون، ومناسبة جداً للخروجات والهدايا."
+      },
+      {
+        id: "FL-02",
+        name: "مگ سيراميك أنيق للقهوة والمشروبات",
+        category: "mugs",
+        price: 120,
+        image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80",
+        desc: "مگ سيراميك عالي الجودة لصباح هادئ، تصميم شيك وألوان ثابتة.",
+        details: "آمن في الميكروويف، سعة مناسبة للمشروبات الساخنة، متوفر بأشكال بناتية رائعة."
+      },
+      {
+        id: "FL-03",
+        name: "ساعة يد بناتية سوار معدني فاخر",
+        category: "watches",
+        price: 350,
+        image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80",
+        desc: "ساعة أنيقة بتصميم عصري تناسب السهرات والخروجات الرسمية واليومية.",
+        details: "ماكينة عالية الدقة، سوار مقاوم للخدش، ضمان ضد عيوب الصناعة."
+      },
+      {
+        id: "FL-04",
+        name: "عباية خروج راقية بقصة انسيابية",
+        category: "abayas",
+        price: 550,
+        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80",
+        desc: "عباية خروج أنيقة ومريحة مصممة بعناية فائقة لتلائم أحدث صيحات الموضة.",
+        details: "قماش خفيف وعالي الجودة، مريح جداً في اللبس اليومي والخروجات."
+      },
+      {
+        id: "FL-05",
+        name: "سلسلة فصوص لامعة للهدايا",
+        category: "necklaces",
+        price: 180,
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
+        desc: "هدية مثالية تجمع بين الرقة والجمال، تضفي إشراقة ساحرة على مظهرك.",
+        details: "سلسلة مع قلادة فصوص لامعة، لا تتأثر بالعطور أو الماء."
+      },
+      {
+        id: "FL-06",
+        name: "مگ هدايا مودرن بتصميم جذاب",
+        category: "mugs",
+        price: 140,
+        image: "https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=600&q=80",
+        desc: "مگ متكامل هدية شيك جداً ومميزة لصديقتك أو أختك في كل المناسبات.",
+        details: "يأتي في علبة هدايا أنيقة جاهزة للتقديم."
+      },
+      {
+        id: "FL-07",
+        name: "ساعة روز جولد بناتية كلاسيك",
+        category: "watches",
+        price: 390,
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80",
+        desc: "تجسيد للفخامة والأناقة في معصمك، تصميم يجمع بين البساطة والجمال.",
+        details: "متوفرة بألوان متعددة (فضي، ذهبي، روز جولد)."
+      },
+      {
+        id: "FL-08",
+        name: "عباية كاجوال أنيقة ومريحة",
+        category: "abayas",
+        price: 480,
+        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
+        desc: "مصممة خصيصاً للراحة والأناقة اليومية واستقبال الضيوف بإطلالة مميزة.",
+        details: "خامات طرية ومريحة، ألوان ثابتة لا تتأثر بالغسيل المتكرر."
+      }
+    ];
+
+    // تحميل المنتجات المحفوظة في المتصفح أو استخدام الافتراضية
+    let products = JSON.parse(localStorage.getItem('florida_products')) || [...defaultProducts];
+    let cart = [];
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function saveProducts() {
+      localStorage.setItem('florida_products', JSON.stringify(products));
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const filtered = products.filter(p => {
+        const matchesCat = currentFilter === 'all' || p.category === currentFilter;
+        const q = currentSearch.toLowerCase().trim();
+        const matchesSearch = !q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:#6b7280;">
+          لا توجد منتجات معروضة حالياً في هذا القسم. اضغطي على "+ إضافة منتج" لإضافة قطع جديدة! ✨
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="product-card">
+          <div class="card-img-box">
+            <span class="cat-badge">${categoryNames[p.category] || 'FLORIDA'}</span>
+            <button class="btn-delete-product" title="حذف المنتج من المتجر" onclick="deleteProduct('${p.id}')">🗑️</button>
+            <img src="${p.image}" alt="${p.name}" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>${p.name}</h3>
+            <p class="card-desc">${p.desc}</p>
+            <div class="product-price">${p.price} جنيه</div>
+            <div class="card-footer">
+              <button class="btn-add-cart" onclick="addToCart('${p.id}')">+ أضف للسلة</button>
+              <button class="btn-details" onclick="showSpecs('${p.id}')">التفاصيل</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // دالة حذف المنتج من الكتالوج والسلة
+    function deleteProduct(productId) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod) return;
+
+      if (confirm(`هل أنت متأكد من حذف "${prod.name}" من المتجر؟`)) {
+        products = products.filter(p => p.id !== productId);
+        cart = cart.filter(item => item.id !== productId);
+        saveProducts();
+        renderProducts();
+        updateCartUI();
+        showToast("تم حذف المنتج بنجاح 🗑️");
+      }
+    }
+
+    function resetDefaultProducts() {
+      if (confirm("هل تريد استعادة جميع المنتجات الافتراضية للمتجر؟")) {
+        products = [...defaultProducts];
+        saveProducts();
+        renderProducts();
+        showToast("تمت استعادة المنتجات الافتراضية ✨");
+      }
+    }
+
+    document.getElementById('filterTabs').addEventListener('click', (e) => {
+      if (!e.target.classList.contains('filter-btn')) return;
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      e.target.classList.add('active');
+      currentFilter = e.target.dataset.filter;
+      renderProducts();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      renderProducts();
+    });
+
+    function addToCart(productId) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod) return;
+
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...prod, qty: 1 });
+      }
+      updateCartUI();
+      showToast(`تمت إضافة "${prod.name}" إلى السلة`);
+    }
+
+    function changeQty(productId, delta) {
+      const idx = cart.findIndex(i => i.id === productId);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) {
+        cart.splice(idx, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('cartCount').textContent = totalItems;
+
+      const container = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:2rem; color:#6b7280;">
+          سلة الطلبات فارغة حالياً. اختاري ما يعجبك من المنتجات! 🛍️
+        </div>`;
+        return;
+      }
+
+      let totalSum = 0;
+      container.innerHTML = cart.map(item => {
+        totalSum += item.price * item.qty;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <img src="${item.image}" alt="${item.name}">
+              <div>
+                <strong style="display:block; font-size:0.9rem;">${item.name}</strong>
+                <small style="color:#ec4899; font-weight:700;">${item.price} ج × ${item.qty} = ${item.price * item.qty} ج</small>
+              </div>
+            </div>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+              <strong>${item.qty}</strong>
+              <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+            </div>
+          </div>
+        `;
+      }).join('') + `<div style="text-align:center; font-weight:900; margin-top:10px; color:#1f2937;">الإجمالي الكلي: ${totalSum} جنيه</div>`;
+    }
+
+    function toggleDrawer(open) {
+      const overlay = document.getElementById('drawerOverlay');
+      if (open) overlay.classList.add('open');
+      else overlay.classList.remove('open');
+    }
+
+    function buildOrderMessage() {
+      const name = document.getElementById('clientName').value.trim() || "غير محدد";
+      const phone = document.getElementById('clientPhone').value.trim() || "غير محدد";
+      const address = document.getElementById('clientAddress').value.trim() || "غير محدد";
+
+      let lines = [
+        `🌸 *أوردر جديد من متجر FLORIDA (منة وفاطمة)* 🌸`,
+        `اسم العميل: ${name}`,
+        `رقم الهاتف: ${phone}`,
+        `العنوان: ${address}`,
+        `--------------------------`,
+        `*المنتجات المطلوبة:*`
+      ];
+
+      let total = 0;
+      if (cart.length === 0) {
+        lines.push(`- لا توجد منتجات محددة`);
+      } else {
+        cart.forEach((item, i) => {
+          lines.push(`${i + 1}. ${item.name} — الكمية: ${item.qty} — السعر: ${item.price * item.qty}ج`);
+          total += item.price * item.qty;
+        });
+        lines.push(`--------------------------`);
+        lines.push(`*إجمالي المبلغ المطلوب:* ${total} جنيه`);
+      }
+
+      return lines.join('\n');
+    }
+
+    function submitOrder(e) {
+      e.preventDefault();
+      const msg = encodeURIComponent(buildOrderMessage());
+      window.open(`https://wa.me/201000000000?text=${msg}`, '_blank');
+    }
+
+    function copyOrderText() {
+      const text = buildOrderMessage();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast("تم نسخ تفاصيل الأوردر بنجاح!");
+        }).catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast("تم نسخ تفاصيل الأوردر بنجاح!");
+    }
+
+    function showSpecs(productId) {
+      const p = products.find(item => item.id === productId);
+      if (!p) return;
+
+      document.getElementById('modalContent').innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+          <img src="${p.image}" alt="${p.name}" style="width:120px; height:120px; object-fit:cover; border-radius:14px; border:1px solid #fbcfe8;">
+          <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <h3 style="margin-bottom:0.5rem; color:#1f2937;">${p.name}</h3>
+        <p style="color:#6b7280; font-size:0.92rem; margin-bottom:1rem;">${p.desc}</p>
+        <p style="color:#ec4899; font-weight:900; font-size:1.25rem; margin-bottom:1rem;">السعر: ${p.price} جنيه</p>
+        <div style="background:#fdf2f8; padding:1rem; border-radius:10px; margin-bottom:1.2rem; font-size:0.9rem; color:#374151;">
+          <strong>تفاصيل المنتج:</strong> ${p.details}
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button class="btn-primary" style="flex:1; justify-content:center;" onclick="addToCart('${p.id}'); closeModal();">
+            + أضف للسلة
+          </button>
+          <button class="btn-details" style="color:#ef4444; border-color:#fecaca;" onclick="closeModal(); deleteProduct('${p.id}');">
+            حذف المنتج 🗑️
+          </button>
+        </div>
+      `;
+      document.getElementById('specsModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('specsModal').classList.remove('open');
+    }
+
+    function openAddModal() {
+      document.getElementById('addModal').classList.add('open');
+    }
+
+    function closeAddModal() {
+      document.getElementById('addModal').classList.remove('open');
+    }
+
+    function handleNewProduct(e) {
+      e.preventDefault();
+      const name = document.getElementById('newProdName').value.trim();
+      const category = document.getElementById('newProdCat').value;
+      const price = parseFloat(document.getElementById('newProdPrice').value) || 0;
+      const desc = document.getElementById('newProdDesc').value.trim();
+      const fileInput = document.getElementById('newProdImgFile');
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          products.unshift({
+            id: "FL-" + Date.now(),
+            name: name,
+            category: category,
+            price: price,
+            image: event.target.result,
+            desc: desc,
+            details: desc
+          });
+          saveProducts();
+          renderProducts();
+          closeAddModal();
+          e.target.reset();
+          showToast("تم نشر المنتج بالصورة الجديدة بنجاح! 🌸");
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+
+    renderProducts();
+    updateCartUI();
+  </script>
+</body>
+</html>
